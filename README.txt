@@ -1,3 +1,2 @@
-# NLP_2018_cosinie
-
-This is Zoe Tagbotos project repository for the NLP 2018 class at Ashesi 
+# NLP_2018_tagboto
+This is Zoe Tagboto's project repository for the NLP 2018 class at Ashesi 
