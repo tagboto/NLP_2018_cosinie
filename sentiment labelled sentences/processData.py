@@ -3,8 +3,8 @@ import re
 def readFile(filename):
     reviews = []
     for line in open(filename):
-        reviews.append(re.sub(r"[\n\t.!,'-()]*","",line.lower()))
-    #reviews = [line.rstrip('\n/t') for line in open(filename)]
+        cleanLine = re.sub(r"[\n\t!';:&():?%$#+]","",line.lower())
+        reviews.append(re.sub(r"[/,.-]"," ",cleanLine.lower()))        
     return reviews
 
 def splitData(reviews):
@@ -25,10 +25,14 @@ def splitData(reviews):
     posProb = len(allClasses[1])/total
 
     #return the split list and the negative and positive probability
+    print("number of neg reviews is",len(allClasses[0]))
+    print("number of pos reviews is",len(allClasses[1]))
+    print("number of total reviews is",total)
+    
     return(allClasses,negProb,posProb)
 
 
 
-first = readFile('amazon_cells_labelled.txt')
+first = readFile('imdb_labelled.txt')
 splitClasses, negProb, posProb = splitData(first)
 print(negProb, posProb)
