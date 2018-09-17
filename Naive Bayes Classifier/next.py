@@ -1,29 +1,3 @@
-
-import re
-
-def readToDict(filename):
-    trainData = dataSplit(filename)
-    allClasses = {}
-    for line in open(trainData):
-        cleanLine = re.sub(r"[\n\t!';:&*():?%$#+]","",line.lower())
-        review = re.sub(r"[/,.-]"," ",cleanLine)
-        val = int(review[-1][-1])
-        if val in allClasses:
-            allClasses[val].append(review[:-1])
-    
-        else:
-            allClasses[val] = [review[:-1]]
-    return(allClasses)
-
-
-    return totalDict 
-
-
-
-def dataSplit(filename):
-    print(len(open(filename)))
-    
-
 def posDict(allClasses):
     posClass = {}
     for line in allClasses[1]:
@@ -33,7 +7,7 @@ def posDict(allClasses):
     
             else:
                 posClass[word] = 1
-    return posClass
+   return posClass
 
 def negDict(allClasses):
     negClass = {}
@@ -54,8 +28,6 @@ def totalDict(posDict, negDict):
         else:
             totalDict[key] = negDict[key]
             
-allClasses = readToDict('amazon_cells_labelled.txt')
-posClass = posDict(allClasses)
-negClass = negDict(allClasses)
+countP, posClass = posDict(allClasses)
+countN, negClass = negDict(allClasses)
 totalDict = totalDict(posClass, negClass)
-
