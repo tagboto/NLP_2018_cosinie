@@ -5,9 +5,14 @@ def readFile(filename):
     for line in open(filename):
         cleanLine = re.sub(r"[\n\t!';:&():?%$#+]","",line.lower())
         reviews.append(re.sub(r"[/,.-]"," ",cleanLine.lower()))        
+
     return reviews
 
-def splitData(reviews):
+def trainAndTest(reviews):
+    trainData = reviews
+    testData = 
+
+def posAndNegClass(reviews):
     allClasses = {}
     total = len(reviews)
 

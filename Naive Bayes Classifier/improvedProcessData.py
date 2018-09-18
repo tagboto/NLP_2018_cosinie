@@ -21,7 +21,9 @@ def readToDict(filename):
 
 
 def dataSplit(filename):
-    print(len(open(filename)))
+    splitLen = 400
+    outputBase = 'amazonTrain'
+    
     
 
 def posDict(allClasses):
