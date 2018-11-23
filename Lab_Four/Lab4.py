@@ -19,16 +19,16 @@ def main():
     
        
     if classifier_type == "nb" and norm_or_un == "u":
-        print("you are running the unnormalalized naive bayes classifier")
+        print("you are running the unnormalized naive bayes classifier")
         predicions  = unnormalized_NB(file)
     elif classifier_type == "nb" and norm_or_un == "n":
-        print("you are running the normalalized naive bayes classifier") 
+        print("you are running the normalized naive bayes classifier") 
         predictions = normalized_NB(file)
     elif classifier_type == "lr" and norm_or_un == "n":
-        print("you are running the unnormalalized logistic regression classifier")
+        print("you are running the normalized logistic regression classifier")
         predictions = normalized_LR(file)
     elif classifier_type == "lr" and norm_or_un == "u":
-         print("you are running the normalalized logistic regression classifier")
+         print("you are running the unnormalized logistic regression classifier")
          predictions = unnormalized_LR(file)
     else:
         print("You have made an error. Please try again")
